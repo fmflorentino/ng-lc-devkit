@@ -1,0 +1,8 @@
+<button mat-raised-button [matMenuTriggerFor]="menu">
+  <mat-icon>filter_list</mat-icon> {{ filterText }} <mat-icon>keyboard_arrow_down</mat-icon>
+</button>
+<mat-menu #menu="matMenu" [class]="'filter-select'">
+  <button mat-menu-item (click)="filterEvent($event)" [value]="'Produtos'">Produtos</button>
+  <button mat-menu-item (click)="filterEvent($event)" [value]="'Cotas'">Cotas</button>
+  <!-- <button mat-menu-item (click)="filterEvent($event)" [value]="'Produtos e Cotas'">Produtos e Cotas</button> -->
+</mat-menu>

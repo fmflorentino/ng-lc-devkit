@@ -1,0 +1,19 @@
+{
+  "name": "ng-lc-devkit",
+  "version": "1.0.11",
+  "description": "This is a simple example Angular Library published to npm.",
+  "keywords": [
+    "Angular",
+    "Library"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fmflorentino/ng-lc-devkit.git"
+  },
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/material": "^7.2.0"
+  }
+}

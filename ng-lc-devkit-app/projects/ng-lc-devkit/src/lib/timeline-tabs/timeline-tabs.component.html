@@ -1,0 +1,18 @@
+<mat-tab-group>
+  <mat-tab label="Tudo">
+    <div *ngFor="let day of daysAsLineItem">
+      <mat-chip-list>
+        <mat-chip>{{ day.label }}</mat-chip>
+      </mat-chip-list>
+      <div class="timeline-line">
+        <lc-timeline-item
+          *ngFor="let movement of day.movement"
+          [movimentation]="movement"
+        ></lc-timeline-item>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Crédito" class="center"> </mat-tab>
+  <mat-tab label="Resgates"> </mat-tab>
+  <mat-tab label="Futuro"></mat-tab>
+</mat-tab-group>

@@ -1,0 +1,64 @@
+<div>
+  <div class="icon" *ngIf="progressIconImage">
+    <figure>
+      <img [src]="progressIconSrc" alt="">
+    </figure>
+    <p>
+      {{ typeName }}
+    </p>
+  </div>
+  <div class="texts">
+    <span *ngIf="_progressType !== quota" [ngClass]="
+      {
+      'green' : _progressType === product,
+      'pink' : _progressType === quota
+      }">{{
+      progressValueOne }}</span>
+    <span *ngIf="_progressType !== quota">{{ progressValueTwo }}</span>
+
+    <span *ngIf="_progressType === quota" [ngClass]="
+      {
+      'green' : _progressType === product,
+      'pink' : _progressType === quota
+      }">{{
+      progressValueOne | currency:'BRL' }}
+    </span>
+    <span *ngIf="_progressType === 'quota'">{{ progressValueTwo | currency:'BRL' }}
+    </span>
+  </div>
+  <mat-progress-bar mode="determinate" value="40" [ngClass]="
+    {
+    'green' : _progressType === product,
+    'pink' : _progressType === quota
+    }"></mat-progress-bar>
+  <div class="texts">
+    <span class="bottom" [ngClass]="
+      {
+      'green' : _progressType === product,
+      'quota' : _progressType === quota
+      }">{{
+      getFirstBottomLabel }}</span>
+    <span class="bottom">{{ getSecondBottomLabel }}</span>
+  </div>
+</div>
+
+
+<div class="second-progress-bar">
+  <div class="texts">
+    <span *ngIf="_progressType !== quota" class="blue">{{
+      progressValueOne }}</span>
+    <span *ngIf="_progressType !== quota">{{ progressValueTwo }}</span>
+
+    <span *ngIf="_progressType === quota" class="blue">{{
+      progressValueOne | currency:'BRL' }}
+    </span>
+    <span *ngIf="_progressType === quota">{{ progressValueTwo | currency:'BRL' }}
+    </span>
+  </div>
+  <mat-progress-bar mode="determinate" value="40" class="blue"></mat-progress-bar>
+  <div class="texts">
+    <span class="bottom blue">{{
+      getFirstBottomLabel }}</span>
+    <span class="bottom">{{ getSecondBottomLabel }}</span>
+  </div>
+</div>
